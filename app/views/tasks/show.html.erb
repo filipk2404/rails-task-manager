@@ -1,0 +1,16 @@
+<h1>Show task</h1>
+
+<div class = "container">
+  <div class = "card" >
+    <h2 class ="card-title" ><%= @task.title %> </h2>
+
+    <h3 class = "card-text"><%= @task.details%></h3>
+
+
+    <p> <%= check_box_tag :completed, 1, @task.completed %>
+      <%= @task.completed ? @check = "Task completed": @check = "Task not yet completed" %>
+    </p>
+
+  </div>
+  <%= link_to "Back to tasks list", tasks_index_path %>
+</div>

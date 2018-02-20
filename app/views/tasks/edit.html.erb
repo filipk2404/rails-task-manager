@@ -1,0 +1,24 @@
+<h1>edit Task</h1>
+
+<form action= "/tasks/update" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div>
+    <label for="title">Task title:  </label>
+    <% @task.details%>
+    <input name="task[title]" id= "title" type="text" size="40" value="<%= @task.title %>" >
+    </div>
+    <div>
+    <label for="description">description:</label>
+    <input name="task[details]" value="<%= @task.details %>" size ="160" >
+    </div>
+    <div>
+      <p> <%= check_box_tag :completed, 1, @task.completed %>
+        <%= @task.completed ? @check = "Task completed uncheck": @check = "Task not yet completed check to complete" %>
+    </div>
+   <%  @task.completed = true %>
+
+    <input type="submit" value="update">
+</div>
+
+    </form>
+

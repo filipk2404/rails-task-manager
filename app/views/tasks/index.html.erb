@@ -1,0 +1,22 @@
+<h1>My tasks</h1>
+
+<form method="get" action="/tasks/new">
+      <div><input value="New" type="submit" /></div>
+</form>
+
+<div class = "container">
+<ul>
+  <% @tasks.each do |task| %>
+  <li>
+  <%= link_to'edit', tasks_edit_path(task.id) %>
+  <%= link_to'destroy', tasks_destroy_path(task.id) %>
+    <%= check_box_tag :completed, 1, task.completed %>
+      <%= task.id%>
+      <%= link_to task.title, tasks_show_path(task.id) %>
+
+
+     </li>
+      <% end %>
+</ul>
+
+</div>

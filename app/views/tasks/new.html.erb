@@ -1,0 +1,18 @@
+<h1>New Task</h1>
+
+<form action= "/tasks/create" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div>
+    <label for="title">Task title:  </label>
+    <input name ="task[title]" id= "title" type="text" size="40" placeholder ="enter task title here">
+    </div>
+    <div>
+    <label for="description">description:</label>
+    <textarea name="task[details]" placeholder ="enter task description here" rows="4" cols="40"></textarea>
+    <div>
+        <!-- other inputs here -->
+    <input type="submit" value="Create">
+</div>
+
+    </form>
+
